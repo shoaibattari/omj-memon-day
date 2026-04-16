@@ -100,7 +100,7 @@ export default function HomePage() {
               <FaGift className="text-blue-600 text-4xl" />
             </div>
             <h3 className="text-2xl font-black text-blue-900 mb-3">
-              FUN & GIFTS
+              FUN & GIFTS And Much More
             </h3>
             <p className="text-slate-500 font-medium">
               Exciting activities and special gifts curated for our special
