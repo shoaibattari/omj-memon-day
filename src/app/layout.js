@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "OMJ Memon Day Celebration 2026",
-  description: "12-April 2026 celebration event at HEF Family Park Husseinabad App Create Shoaib Abdul Sattar Khosa",
+  title: "OMJ BREAST CANCER Awareness Program HEALTH SEMINAR (Breast Examination)",
+  description: "18 april saturday 4pm husein ibrahim sports complex and community center Husseinabad App Create Shoaib Abdul Sattar Khosa",
 };
 
 export default function RootLayout({ children }) {
