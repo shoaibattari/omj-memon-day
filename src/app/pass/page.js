@@ -71,10 +71,10 @@ export default function PassPage() {
         />
 
         {/* --- THEMED FULL PINK PASS PREVIEW --- */}
-        <div className="flex justify-center sticky top-24">
+        <div className="flex justify-center sticky top-20 sm:top-24 w-full overflow-hidden py-2">
           <div
             ref={passRef}
-            className="w-[350px] h-[580px] bg-pink-600 rounded-[2.5rem] shadow-2xl overflow-hidden relative border-[10px] border-white"
+            className="w-full max-w-[350px] min-h-[540px] bg-pink-600 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl overflow-hidden relative border-[6px] sm:border-[10px] border-white"
           >
             {/* Background Texture */}
             <div className="absolute inset-0 bg-gradient-to-b from-pink-500 to-pink-700 opacity-95"></div>

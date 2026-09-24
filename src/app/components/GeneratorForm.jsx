@@ -9,7 +9,7 @@ export default function GeneratorForm({
   userImage
 }) {
   return (
-    <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-pink-50 space-y-8 animate-in fade-in slide-in-from-left duration-700">
+    <div className="bg-white p-5 sm:p-8 md:p-10 rounded-3xl sm:rounded-[2.5rem] shadow-2xl border border-pink-50 space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-left duration-700 w-full">
       
       {/* Header with Medical Theme Icon */}
       <div className="flex items-center gap-4">
