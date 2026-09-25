@@ -56,8 +56,8 @@ export default async function OpenGraphImage() {
             {logoSrc && (
               <img
                 src={logoSrc}
-                width="68"
-                height="68"
+                width={68}
+                height={68}
                 style={{ objectFit: "contain" }}
                 alt="OMJ Logo"
               />
@@ -131,6 +131,8 @@ export default async function OpenGraphImage() {
           >
             <div
               style={{
+                display: "flex",
+                flexWrap: "wrap",
                 fontSize: "66px",
                 fontWeight: 900,
                 color: "#ffffff",
@@ -139,7 +141,9 @@ export default async function OpenGraphImage() {
                 textTransform: "uppercase",
               }}
             >
-              KARACHI <span style={{ color: "#ffdb15" }}>YOUTH TALK</span> 2026
+              <span style={{ marginRight: "20px" }}>KARACHI</span>
+              <span style={{ color: "#ffdb15", marginRight: "20px" }}>YOUTH TALK</span>
+              <span>2026</span>
             </div>
 
             <div
@@ -182,8 +186,8 @@ export default async function OpenGraphImage() {
             >
               <img
                 src={speakerSrc}
-                width="155"
-                height="185"
+                width={155}
+                height={185}
                 style={{
                   objectFit: "cover",
                   borderRadius: "14px",

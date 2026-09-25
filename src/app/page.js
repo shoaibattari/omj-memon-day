@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Countdown from "./components/Countdown";
+import MobileCTA from "./components/MobileCTA";
 
 const THEMES = [
   {
@@ -77,7 +79,7 @@ const LOGISTICS = [
 
 export default function HomePage() {
   return (
-    <div style={{ background: "#030b1e", minHeight: "100vh", color: "#f0f6ff" }}>
+    <div className="pb-20 md:pb-0" style={{ background: "#030b1e", minHeight: "100vh", color: "#f0f6ff" }}>
       <Navbar showBack={false} />
 
       {/* ======================================================== */}
@@ -281,34 +283,34 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Call To Actions */}
-            <div
-              style={{
-                display: "flex",
-                gap: 16,
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
+            {/* Call To Actions: one primary action, secondary tools as chips */}
+            <a
+              id="hero-register-primary-btn"
+              href="https://forms.gle/5DPXQKVufUGSsJ3T6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary-gold anim-glow"
+              style={{ fontSize: "1.1rem", padding: "18px 38px" }}
             >
-              <a
-                id="hero-register-primary-btn"
-                href="https://forms.gle/5DPXQKVufUGSsJ3T6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary-gold"
-              >
-                <span>📋 Register Free on Google Form</span>
-                <span>→</span>
-              </a>
+              <span>📋 Register Free Now</span>
+              <span>→</span>
+            </a>
 
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 18 }}>
+              <Link id="hero-pass-btn" href="/pass" className="tool-chip">
+                🎟️ Entry Pass
+              </Link>
+              <Link id="hero-dp-btn" href="/dp" className="tool-chip">
+                🖼️ Event DP
+              </Link>
               <a
                 id="hero-whatsapp-btn"
                 href="https://chat.whatsapp.com/DcwjPcGJEKP8x5fUgd6fFi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp-modern"
+                className="tool-chip tool-chip-wa"
               >
-                <span>💬 Join WhatsApp Community</span>
+                💬 WhatsApp Community
               </a>
             </div>
 
@@ -566,7 +568,7 @@ export default function HomePage() {
         }}
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
+          <div className="reveal" style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
             <span className="section-accent-bar" />
             <h2
               style={{
@@ -601,7 +603,7 @@ export default function HomePage() {
           >
             {/* Card 1: Special Activity */}
             <div
-              className="glass-card"
+              className="glass-card reveal"
               style={{
                 borderRadius: 24,
                 padding: "36px 30px",
@@ -656,7 +658,7 @@ export default function HomePage() {
 
             {/* Card 2: Surprise Gift */}
             <div
-              className="surprise-box"
+              className="surprise-box reveal"
               style={{
                 borderRadius: 24,
                 padding: "36px 30px",
@@ -715,7 +717,7 @@ export default function HomePage() {
       {/* ======================================================== */}
       <section id="themes" style={{ padding: "clamp(50px, 8vw, 90px) clamp(12px, 3.5vw, 24px)", background: "linear-gradient(180deg, #030b1e 0%, #06183d 100%)", position: "relative" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
+          <div className="reveal" style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
             <span className="section-accent-bar" />
             <h2
               style={{
@@ -751,7 +753,7 @@ export default function HomePage() {
             {THEMES.map((item) => (
               <div
                 key={item.title}
-                className="glass-card"
+                className="glass-card reveal"
                 style={{
                   borderRadius: 22,
                   padding: "32px 28px",
@@ -868,7 +870,7 @@ export default function HomePage() {
             className="lg:grid-cols-12"
           >
             {/* Left Content (Cols 7) */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 reveal">
               <div
                 style={{
                   display: "inline-flex",
@@ -955,7 +957,7 @@ export default function HomePage() {
 
               <a
                 id="qa-section-form-btn"
-                href="https://forms.gle/5DPXQKVufUGSsJ3T6"
+                href="https://forms.gle/RifJjMhBiQF7EQNAA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary-gold"
@@ -966,7 +968,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Card Callout (Cols 5) */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 reveal">
               <div
                 className="glass-panel"
                 style={{
@@ -1017,7 +1019,7 @@ export default function HomePage() {
                   }}
                 >
                   {[
-                    "Click on the Google Form registration link.",
+                    "Click on the \"Submit Your Question\" Google Form link.",
                     "Fill in your name & select your topic of concern.",
                     "Type your honest question for Soban Attari.",
                     "Attend on 27th September at Husein Ebrahim Sports Complex to hear your answer live!",
@@ -1093,7 +1095,7 @@ export default function HomePage() {
       {/* ======================================================== */}
       <section id="speaker" style={{ padding: "clamp(50px, 8vw, 90px) clamp(12px, 3.5vw, 24px)", background: "#030b1e" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
+          <div className="reveal" style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
             <span className="section-accent-bar" />
             <h2
               style={{
@@ -1128,7 +1130,7 @@ export default function HomePage() {
             className="lg:grid-cols-12"
           >
             {/* Speaker Large Image */}
-            <div className="lg:col-span-5" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="lg:col-span-5 reveal" style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative", width: "100%", maxWidth: 390 }}>
                 <div
                   className="speaker-avatar-frame"
@@ -1175,7 +1177,7 @@ export default function HomePage() {
             </div>
 
             {/* Speaker Bio & Details */}
-            <div className="lg:col-span-7" style={{ marginTop: 20 }}>
+            <div className="lg:col-span-7 reveal" style={{ marginTop: 20 }}>
               <div
                 style={{
                   display: "inline-block",
@@ -1232,60 +1234,16 @@ export default function HomePage() {
                 Soban Attari is widely revered across Pakistan for his profound, relatable, and heart-touching sessions that connect Islamic wisdom with real-world professional growth. His dynamic storytelling and sincere guidance have helped thousands of young minds conquer confusion, find purposeful careers, and build resilient lives.
               </p>
 
-              {/* Special Activity Notice Box from poster */}
-              <div
-                style={{
-                  background: "linear-gradient(135deg, rgba(37, 99, 235, 0.25) 0%, rgba(14, 42, 107, 0.45) 100%)",
-                  border: "1.5px solid rgba(255, 219, 21, 0.4)",
-                  borderRadius: 18,
-                  padding: "20px 24px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 18,
-                  marginBottom: 30,
-                }}
+              {/* Speaker CTA */}
+              <a
+                href="https://forms.gle/5DPXQKVufUGSsJ3T6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary-gold"
               >
-                <span style={{ fontSize: "2rem", flexShrink: 0 }}>📓</span>
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "Oswald, sans-serif",
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                      color: "#ffdb15",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      marginBottom: 4,
-                    }}
-                  >
-                    Special Activity Alert — Bring Notebook &amp; Pen!
-                  </p>
-                  <p style={{ fontSize: "0.86rem", color: "rgba(224, 242, 254, 0.8)", lineHeight: 1.5 }}>
-                    So tamam participants apne sath <strong>Notebook and Pen</strong> zaroor layein. Session ke doran ek practical life-mapping exercise karwayi jayegi!
-                  </p>
-                </div>
-              </div>
-
-              {/* Speaker CTAs */}
-              <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-                <a
-                  href="https://forms.gle/5DPXQKVufUGSsJ3T6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary-gold"
-                >
-                  <span>📋 Register To Attend Session</span>
-                  <span>→</span>
-                </a>
-                <a
-                  href="https://chat.whatsapp.com/DcwjPcGJEKP8x5fUgd6fFi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp-modern"
-                >
-                  <span>💬 Join Community</span>
-                </a>
-              </div>
+                <span>📋 Register To Attend Session</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1303,7 +1261,7 @@ export default function HomePage() {
         }}
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
+          <div className="reveal" style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
             <span className="section-accent-bar" />
             <h2
               style={{
@@ -1340,7 +1298,7 @@ export default function HomePage() {
             {LOGISTICS.map((item) => (
               <div
                 key={item.title}
-                className="glass-card"
+                className="glass-card reveal"
                 style={{
                   borderRadius: 20,
                   padding: "30px 24px",
@@ -1558,6 +1516,15 @@ export default function HomePage() {
             </a>
           </div>
 
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center", marginTop: -28, marginBottom: 50 }}>
+            <Link id="cta-pass-btn" href="/pass" className="tool-chip">
+              🎟️ Get Your Entry Pass
+            </Link>
+            <Link id="cta-dp-btn" href="/dp" className="tool-chip">
+              🖼️ Make Your Event DP
+            </Link>
+          </div>
+
           {/* Contact Person Inquiry Card */}
           <div
             className="glass-panel"
@@ -1738,6 +1705,7 @@ export default function HomePage() {
       </section>
 
       <Footer />
+      <MobileCTA />
     </div>
   );
 }

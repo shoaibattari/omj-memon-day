@@ -1,5 +1,14 @@
-import Link from "next/link";
 import Image from "next/image";
+import { FaFacebook, FaWhatsapp, FaInstagram, FaTiktok, FaThreads, FaLinkedin } from "react-icons/fa6";
+
+const SOCIALS = [
+  { label: "Facebook", href: "https://www.facebook.com/creatomationstudio", Icon: FaFacebook },
+  { label: "WhatsApp Channel", href: "https://whatsapp.com/channel/0029VbD31FL5Ui2Tb7S1bK1J", Icon: FaWhatsapp },
+  { label: "Instagram", href: "https://www.instagram.com/creatomationstudio", Icon: FaInstagram },
+  { label: "TikTok", href: "https://www.tiktok.com/@creatomationstudio", Icon: FaTiktok },
+  { label: "Threads", href: "https://www.threads.com/@creatomationstudio", Icon: FaThreads },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/creatomation-studio", Icon: FaLinkedin },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -81,14 +90,63 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Developer Credit Card */}
+        <div className="rounded-3xl border border-[#ffdb15]/20 bg-gradient-to-br from-[#0b2152]/60 via-[#071638]/50 to-[#020713]/80 p-5 sm:p-6 mb-8">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-sky-100/40 mb-4" style={{ fontFamily: "Oswald, sans-serif" }}>
+            Designed &amp; Developed By
+          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://shoaib-memon.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white"
+            >
+              <Image src="/creatomation-logo.png" fill sizes="56px" alt="Creatomation Studio" className="object-contain p-1" />
+            </a>
+            <div className="min-w-0">
+              <a
+                href="https://shoaib-memon.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-lg font-bold text-white hover:text-[#ffdb15] transition-colors"
+                style={{ fontFamily: "Oswald, sans-serif" }}
+              >
+                Creatomation Studio
+              </a>
+              <a
+                href="https://wa.me/923313416850"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp: 0331 3416850"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#ffdb15] hover:text-[#25D366] transition-colors"
+              >
+                Shoaib Abdul Sattar Khosa <FaWhatsapp size={13} />
+              </a>
+              <span className="block text-xs text-sky-100/50 mt-0.5">AI · Automation · Web Development · Digital Solutions</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3 mt-6">
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 text-sky-100/80 hover:text-[#ffdb15] hover:border-[#ffdb15]/50 hover:bg-[#ffdb15]/10 hover:-translate-y-0.5 transition-all"
+              >
+                <Icon size={17} />
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: 22, textAlign: "center" }}>
           <p style={{ color: "rgba(224, 242, 254, 0.4)", fontSize: "0.72rem" }}>
-            {year} The Okhai Memon Jamat. App by{" "}
-            <Link href="https://wa.me/923313416850" target="_blank" rel="noopener noreferrer"
-              style={{ color: "#ffdb15", textDecoration: "none", fontWeight: 700 }}>
-              Shoaib Abdul Sattar Khosa
-            </Link>
+            © {year} The Okhai Memon Jamat. All rights reserved.
           </p>
           <p style={{ fontFamily: "Oswald, sans-serif", fontWeight: 600, fontSize: "0.68rem", color: "rgba(56, 189, 248, 0.6)", textTransform: "uppercase", letterSpacing: "0.2em", marginTop: 6 }}>
             Ask · Learn · Grow | Better Youth, Brighter Future

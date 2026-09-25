@@ -21,15 +21,8 @@
   --bg-dark: #030b1e;
 }
 
-/* Base Styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Base Styles (box-sizing/margin/padding reset comes from Tailwind preflight,
+   which lives in a layer so utility classes like p-4 can still override it) */
 html {
   scroll-behavior: smooth;
 }
@@ -286,6 +279,57 @@ body {
   box-shadow: 0 6px 20px rgba(255, 219, 21, 0.35);
 }
 
+/* Compact secondary action chips (Pass, DP, WhatsApp) */
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e0f2fe;
+  background: rgba(11, 33, 82, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.tool-chip:hover {
+  color: #ffdb15;
+  border-color: rgba(255, 219, 21, 0.6);
+  background: rgba(255, 219, 21, 0.08);
+  transform: translateY(-2px);
+}
+
+.tool-chip-wa:hover {
+  color: #4ade80;
+  border-color: rgba(37, 211, 102, 0.6);
+  background: rgba(37, 211, 102, 0.08);
+}
+
+/* Scroll reveal (CSS scroll-driven; browsers without support just show content).
+   Uses `translate` rather than `transform` so hover transforms on cards still work. */
+@keyframes revealUp {
+  from { opacity: 0; translate: 0 40px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: revealUp linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+  }
+}
+
 /* Feature Badge */
 .feature-badge {
   display: inline-flex;
@@ -352,67 +396,5 @@ body {
   .speaker-avatar-frame {
     border-radius: 20px !important;
   }
-}
-
-/* ======================================================== */
-/* NAVBAR RESPONSIVE & MOBILE DRAWER UTILITIES              */
-/* ======================================================== */
-.nav-desktop {
-  display: none !important;
-}
-
-@media (min-width: 1024px) {
-  .nav-desktop {
-    display: flex !important;
-    align-items: center;
-    gap: clamp(12px, 1.8vw, 22px);
-  }
-}
-
-.nav-mobile-toggle {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (min-width: 1024px) {
-  .nav-mobile-toggle {
-    display: none !important;
-  }
-}
-
-.nav-mobile-backdrop {
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  .nav-mobile-backdrop {
-    display: none !important;
-  }
-}
-
-.nav-mobile-drawer {
-  display: flex !important;
-}
-
-@media (min-width: 1024px) {
-  .nav-mobile-drawer {
-    display: none !important;
-  }
-}
-
-@keyframes drawerSlideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.anim-drawer-in {
-  animation: drawerSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 

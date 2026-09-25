@@ -52,16 +52,6 @@ export const metadata = {
     images: ["/twitter-image"],
     creator: "@okhaimemonjamat",
   },
-  icons: {
-    icon: [
-      { url: "/omj-logo.png", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    shortcut: "/omj-logo.png",
-    apple: [
-      { url: "/omj-logo.png", sizes: "180x180", type: "image/png" },
-    ],
-  },
   robots: {
     index: true,
     follow: true,
@@ -79,10 +69,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/omj-logo.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/omj-logo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/omj-logo.png" />
-        <link rel="shortcut icon" href="/omj-logo.png" />
         <meta name="theme-color" content="#030b1e" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
